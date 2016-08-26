@@ -5,9 +5,15 @@ class imooc
 	public static $classMap = array();
 	public static function run()
 	{
-		p('ok s');
 		// new a class route
-		$route = new \core\route();
+		/**
+		 * @param \core\lib\route
+		 */
+		$route = new \core\lib\route();
+
+		$ctrlClass = $route->ctrl;
+		$action = $route->action;
+
 	}
 
 	static public function load($class)
