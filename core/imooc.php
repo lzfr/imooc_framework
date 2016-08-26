@@ -13,7 +13,18 @@ class imooc
 
 		$ctrlClass = $route->ctrl;
 		$action = $route->action;
-
+		$ctrlfile = APP . '/ctrl/' . $ctrlClass . 'Ctrl.php';
+		$ctrlClass = '\\'. MODULE .'\ctrl\\'. $ctrlClass . 'Ctrl';
+		if(is_file($ctrlfile)){
+			include $ctrlfile;
+			$ctrl = new $ctrlClass();
+			$ctrl->$action();
+			p($ctrl);
+			p($action);
+		}
+		else{
+			throw new Exception('controller not found', $ctrlClass);
+		}
 	}
 
 	static public function load($class)

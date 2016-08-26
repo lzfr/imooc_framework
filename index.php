@@ -9,6 +9,8 @@
 define('IMOOC', realpath('/home/zhuo/zPhpstormProjects/test/jc/framework/'));
 define('CORE', IMOOC . '/core');
 define('APP', IMOOC . '/app');
+define('MODULE', 'app');
+
 
 define('DEBUG', true);
 
