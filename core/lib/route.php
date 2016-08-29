@@ -31,7 +31,7 @@ class route
 			else{
 				$this->action = 'index';
 			}
-
+			p($patharr);
 			// url transform reste of elem to get var
 			// like id/123325/str/3/test/4
 			// to Get change to id=12322 str=3 test=4
@@ -44,15 +44,10 @@ class route
 					$i = $i + 2;
 				}
 			}
-			p($_GET);
-
 		}
 		else{
 			$this->ctrl=  'index';
 			$this->acton = 'index';
 		}
-		p($patharr);
 	}
-
-
 }
