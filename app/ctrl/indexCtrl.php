@@ -1,5 +1,7 @@
 <?php
 namespace app\ctrl;
+
+use \core\lib\conf;
 class indexCtrl extends \core\imooc
 {
 
@@ -10,6 +12,11 @@ class indexCtrl extends \core\imooc
 //		$sql = "SELECT * FROM items";
 //		$ret = $model->query($sql);
 //		p($ret->fetchAll());
+
+		// \core\lib\conf::get('CTRL');
+		$temp = conf::get('CTRL');
+		$temp = conf::get('ACTION');
+
 
 		$data = "hello world";
 		$title = 'title file ';

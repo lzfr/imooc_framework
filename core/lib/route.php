@@ -1,6 +1,8 @@
 <?php
 namespace core\lib;
 
+use \core\lib\conf;
+
 class route
 {
 
@@ -29,7 +31,7 @@ class route
 				unset($patharr[1]);
 			}
 			else{
-				$this->action = 'index';
+				$this->action = conf::get('ACTION', 'route');
 			}
 			p($patharr);
 			// url transform reste of elem to get var
@@ -46,8 +48,8 @@ class route
 			}
 		}
 		else{
-			$this->ctrl=  'index';
-			$this->acton = 'index';
+			$this->ctrl=  conf::get('CTRL', 'route');
+			$this->acton = conf::get('ACTION', 'route');
 		}
 	}
 }

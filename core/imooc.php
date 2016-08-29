@@ -63,8 +63,7 @@ class imooc
 		{
 			include $file;
 			extract($this->assign);
-			p($this->assign);
-//			exit();
+//			p($this->assign);
 		}
 	}
 }

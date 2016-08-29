@@ -3,6 +3,7 @@ namespace core\lib;
 
 class conf
 {
+	static public $conf = [];
 	static function get($name, $file)
 	{
 		/**
@@ -10,14 +11,30 @@ class conf
 		 * 2. check existing config
 		 * 3. cache config
 		 */
-		$file = IMOOC . '\core\config\\' . $file . '.php';
-		if(is_file($file)){
-			$conf = include $file;
-			isset($conf[$name]);
+		// fi already cache config file
+		p(self::$conf[$file]);
+		p(1);
+		if(isset(self::$conf[$file])){
+			return self::$conf[$file];
 		}
 		else{
-			throw new \Exception('file not found');
+			$path = IMOOC . '/core/config/' . $file . '.php';
+			if(is_file($path)){
+				$conf = include $path;
+				if(isset($conf[$name]))
+				{
+					self::$conf[$file] = $conf;
+					return $conf[$name];
+				}
+				else{
+//					throw new \Exception('pas ce config');
+				}
+			}
+			else{
+//				throw new \Exception('file not found');
+			}
 		}
+
 	}
 
 }
