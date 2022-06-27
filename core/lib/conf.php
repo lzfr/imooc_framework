@@ -4,7 +4,8 @@ namespace core\lib;
 class conf
 {
 	static public $conf = [];
-	static function get($name, $file)
+	
+	public static function get($name, $file)
 	{
 		/**
 		 * 1. check file exist
