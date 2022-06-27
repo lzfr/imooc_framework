@@ -9,6 +9,9 @@ class route
 	public $ctrl;
 	public $action;
 
+	/**
+ 	* @throws Exception
+ 	*/
 	public function __construct()
 	{
 		// index/index => indecontroller->index()
@@ -37,7 +40,7 @@ class route
 			// url transform reste of elem to get var
 			// like id/123325/str/3/test/4
 			// to Get change to id=12322 str=3 test=4
-			$count = count($patharr) + 2;
+			$count = count($patharr) + 3;
 			$i = 2;
 			while($i < $count)
 			{
